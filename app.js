@@ -8,7 +8,7 @@ var path = require("path");
 // app.use('/public', express.static(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.get('/pizarra-multi.herokuapp.com', function(req, res){
+app.get('/', function(req, res){
 	// res.render('index');
 	res.sendFile(__dirname + "/views" + "/index.html");
 });
@@ -63,6 +63,6 @@ io.on('connection', function(socket){
 
 });
 
-http.listen(5000, function(){
+http.listen(process.env.PORT || 3000, function(){
 	console.log('pizarra corriendo en port 3000');
 });

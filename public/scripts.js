@@ -58,7 +58,7 @@ socket.on('notificacion', function(user){
 		// settings
 		type: 'info'
 	});
-
+	impUsers();
 });
 
 socket.on('welcome', function(user){
@@ -69,6 +69,7 @@ socket.on('welcome', function(user){
 		// settings
 		type: 'success'
 	});
+	impUsers();
 });
 
 function random(){
@@ -84,7 +85,7 @@ socket.on('nuevo', function(nombre, contN){
 	var cN = contN - 1;
 	listaUsers[cN] = nombre;
 	//$('#user').append($('<li>').text(nombre));
-	impUsers();
+	//impUsers();
 	update(movimientos, colors);
 });
 
@@ -175,7 +176,7 @@ socket.on('update',function(mov, col){
 
 	socket.on('limpiarCanva', function(){
 		context.clearRect(0, 0, lienzo.width, lienzo.height);
-		
+
 	});
 
 socket.on('desconectado', function(ppuu){
