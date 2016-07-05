@@ -1,0 +1,69 @@
+body{
+	background: #eee!important;
+}
+.contentPizarra{
+	display: block;
+	position: absolute;
+}
+#titulo{
+	display: block;
+	background: #609ac5!important;
+	padding-bottom: 10px!important;
+	-webkit-box-shadow: 0 1px 8px 0 rgba(33,33,33,0.6);
+	box-shadow: 0 1px 8px 0 rgba(33,33,33,0.6);
+}
+h2{
+	text-align: center;
+	color: #f5f5f5!important;
+}
+h3{
+	margin-left: 20px!important;
+	color: #f5f5f5!important;
+}
+#pizarra{
+	display: block;
+	width: 840px;
+	height: 600px;
+	border-radius: 8px;
+	background: #fff;
+	-webkit-box-shadow: 0 1px 10px 1px rgba(33,33,33,0.6);
+	box-shadow: 0 1px 10px 1px rgba(33,33,33,0.6);
+	margin-left: 20px;
+	margin-top: 40px;
+}
+#chat{
+	width: 400px;
+	height: 600px;
+	overflow-y: scroll;
+	overflow-x: scroll;
+	background: #fff;
+	border-radius: 8px;
+	-webkit-box-shadow: 0 1px 10px 1px rgba(33,33,33,0.6);
+	box-shadow: 0 1px 10px 1px rgba(33,33,33,0.6);
+	float: right;
+	margin-top: -600px;
+	margin-right: 40px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#m{
+	width: 100%;
+}
+.btEnviar{
+	display: block;
+	margin: auto;
+	width: 100%;
+	margin-top: 6px!important;
+}
+#liMSJ{
+	padding-top: 10px;
+}
+#footer{
+	display: block;
+	background: #609ac5!important;
+	padding-bottom: 10px!important;
+	margin-top: 40px;
+	-webkit-box-shadow: 0 1px 10px 1px rgba(33,33,33,0.6);
+	box-shadow: 0 1px 10px 1px rgba(33,33,33,0.6);
+}

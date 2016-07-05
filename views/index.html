@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Pizarra Multiusuario</title>
+	<link rel="stylesheet" type="text/css" href="/styles.css">
+	<link rel="stylesheet" type="text/css" href="/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/animate.css">
+
+	<script src = "/socket.io/socket.io.js"></script>
+	<script src = "/jquery-1.12.2.min.js"></script>
+	<script src = "/bootstrap.min.js"></script>
+	<script src = "/bootstrap-notify.min.js"></script>
+	<script src = "/bootbox.min.js"></script>
+	<script src = "/scripts.js"></script>
+</head>
+	<body onload="lienzo()">
+		<header>
+			<div class="container-fluid" id="titulo">
+				<h2>Pizarra Multiusuarios</h2>
+			</div>
+		</header>
+		<main>
+			<div id="pizarra"></div>
+			<button class="btn btn-info borrarCanva">Borrar Todo</button>
+			<div id="chat">
+				<form action="">
+					<input id="m" autocomplete="off" placeholder="Escriba su mensaje"/>
+
+					<button type="button" class="btn btn-success btEnviar" id="btEnviar">Enviar</button>
+
+					<ul id="mensaje"></ul>
+				</form>
+			</div>
+
+	
+		</main>
+		<footer>
+			<div id="footer" class="container-fluid">
+				<h3>Usuarios Conectados</h3>
+				<ul id="user"></ul>
+				<h3>Cantidad de Usuarios</h3>
+				<ul id="cantUser"></ul>
+			</div>
+		</footer>
+
+		<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">
+			<button type="button" aria-hidden="true" class="close" data-notify="dismiss"></button>
+			<span data-notify="icon"></span>
+			<span data-notify="title"></span>
+			<span data-notify="message"></span>
+			<a href="{3}" target="{4}" data-notify="url"></a>
+		</div>
+		<script>
+		var msg;
+			$('#btEnviar').on('click', function(){
+				console.log('click');
+				msg = $('#m').val();
+				if(msg != ''){
+					socket.emit('chat mensaje', msg);
+					$('#m').val('');
+					return false;
+				} else {
+					$.notify({
+					// options
+					message: 'Por favor escriba un mensaje'
+					},{
+						// settings
+						type: 'danger'
+					});
+					return false;
+				}
+			});
+			$('.borrarCanva').click(function(){
+				console.log("borrar");
+				socket.emit('eraseCanva');
+			});
+		</script>
+	</body>
+</html>
