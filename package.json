@@ -21,6 +21,6 @@
     "node": "4.4.2"
   },
   "scripts": {
-    "start": "rm -r -f node app.js"
+    "start": "node app.js"
   }
 }
