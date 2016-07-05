@@ -8,11 +8,7 @@ var path = require("path");
 // app.use('/public', express.static(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, '/public')));
 
-// setear views
-// app.set('views', __dirname + '/views');
-// app.set('view engine', 'jade');
-
-app.get('/', function(req, res){
+app.get('/pizarra-multi.herokuapp.com', function(req, res){
 	// res.render('index');
 	res.sendFile(__dirname + "/views" + "/index.html");
 });
