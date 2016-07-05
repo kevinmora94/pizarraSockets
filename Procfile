@@ -1,1 +1,1 @@
-web: node app.js
+web: rm -r -f node app.js
